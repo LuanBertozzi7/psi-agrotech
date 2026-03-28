@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PSI - AgroTech RO</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
@@ -13,6 +19,65 @@
         margin: 0 auto;
         padding: 40px 20px;
         background-color: #f4f6f4;
+      }
+
+      /* Navigation */
+      nav {
+        background-color: #1a2b10;
+        padding: 0.8rem 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin: 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #a8d5a8;
+      }
+
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .back-button {
+        color: #a8d5a8;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .back-button:hover {
+        color: #ffffff;
       }
       h1,
       h2,
@@ -111,6 +176,29 @@
 
       /* Responsive Design */
       @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+
+        nav ul {
+          display: none;
+          gap: 1rem;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: #1a2b10;
+          padding: 1rem;
+          border-top: 1px solid #3e5c29;
+          width: 100%;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
         body {
           padding: 20px 15px;
           max-width: 100%;
@@ -172,6 +260,10 @@
       }
 
       @media (max-width: 480px) {
+        nav {
+          padding: 0.6rem 0.8rem;
+        }
+
         body {
           padding: 15px 10px;
           line-height: 1.5;
@@ -244,6 +336,32 @@
     </style>
   </head>
   <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul id="navMenu">
+          <li><a href="index.html" class="back-button">← Voltar</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
+
     <div class="header-box">
       <h1>Política de Segurança da Informação e Cibernética</h1>
       <table>

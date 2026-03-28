@@ -49,6 +49,25 @@
         color: #a8d5a8;
       }
 
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
       /* Hero Section */
       .hero {
         background: linear-gradient(135deg, #1a2b10 0%, #3e5c29 100%);
@@ -264,10 +283,36 @@
 
       /* Responsive Design */
       @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+
         nav ul {
+          display: none;
           gap: 1rem;
           flex-direction: column;
           align-items: center;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: #1a2b10;
+          padding: 1rem;
+          border-top: 1px solid #3e5c29;
+          width: 100%;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        nav {
+          padding: 0.8rem 1rem;
+        }
+
+        .nav-container {
+          flex-direction: row;
+          justify-content: space-between;
         }
 
         .hero h1 {
@@ -341,13 +386,33 @@
   <body>
     <!-- Navigation -->
     <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#documentos">Documentos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+      <div class="nav-container">
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul id="navMenu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#documentos">Documentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
     </nav>
+
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      // Fechar menu ao clicar em um link
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
