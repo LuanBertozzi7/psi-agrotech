@@ -3,456 +3,490 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PSI - AgroTech RO</title>
+    <title>PSI - AgroTech RO | Segurança da Informação</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
         color: #2c3e20;
-        max-width: 950px;
-        margin: 0 auto;
-        padding: 40px 20px;
         background-color: #f4f6f4;
       }
-      h1,
-      h2,
-      h3,
-      h4 {
-        color: #1a2b10;
+
+      /* Navigation */
+      nav {
+        background-color: #1a2b10;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
-      h1 {
-        border-bottom: 3px solid #3e5c29;
-        padding-bottom: 10px;
-        font-size: 24px;
-        text-align: center;
-        text-transform: uppercase;
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
       }
-      h2 {
-        margin-top: 40px;
-        border-bottom: 1px solid #a8bba0;
-        padding-bottom: 5px;
-        font-size: 20px;
-      }
-      h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        color: #3e5c29;
-      }
-      .header-box {
-        background-color: #ffffff;
-        padding: 30px;
-        border: 1px solid #d9e2d5;
-        border-left: 5px solid #3e5c29;
-        margin-bottom: 40px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      }
-      .content-box {
-        background-color: #ffffff;
-        padding: 40px;
-        border: 1px solid #d9e2d5;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-        font-size: 14px;
-      }
-      th,
-      td {
-        border: 1px solid #c2d6b3;
-        padding: 10px;
-        text-align: left;
-      }
-      th {
-        background-color: #e3ebe0;
-        color: #1a2b10;
-        font-weight: bold;
-      }
-      ul,
-      ol {
-        margin-bottom: 15px;
-        padding-left: 20px;
-      }
-      li {
-        margin-bottom: 8px;
-      }
-      code {
-        background-color: #eaf1e6;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-family: monospace;
-        color: #2c3e20;
-        font-weight: bold;
-      }
-      .classification {
-        font-weight: bold;
-        display: inline-block;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 12px;
-        text-transform: uppercase;
-      }
-      .class-interno {
-        background-color: #eaf1e6;
-        color: #2c3e20;
-        border: 1px solid #a8bba0;
-      }
-      .class-confidencial {
-        background-color: #d9e2d5;
-        color: #1a2b10;
-        border: 1px solid #8c9e7f;
-      }
-      .class-restrito {
-        background-color: #2c3e20;
+
+      nav a {
         color: #ffffff;
-        border: 1px solid #1a2b10;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #a8d5a8;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #1a2b10 0%, #3e5c29 100%);
+        color: #ffffff;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: #3e5c29;
+        color: #ffffff;
+        padding: 1rem 2.5rem;
+        border: 2px solid #a8bba0;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+
+      .cta-button:hover {
+        background-color: #5a7d40;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Features Section */
+      .features {
+        padding: 4rem 2rem;
+        background-color: #ffffff;
+      }
+
+      .features h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: #1a2b10;
+        border-bottom: 3px solid #3e5c29;
+        padding-bottom: 1rem;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background-color: #f4f6f4;
+        padding: 2rem;
+        border-radius: 4px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card h3 {
+        color: #3e5c29;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .feature-card p {
+        color: #2c3e20;
+        line-height: 1.8;
+      }
+
+      /* About Section */
+      .about {
+        padding: 4rem 2rem;
+        background-color: #f4f6f4;
+      }
+
+      .about h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #1a2b10;
+        border-bottom: 3px solid #3e5c29;
+        padding-bottom: 1rem;
+      }
+
+      .about-content {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .about p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: #2c3e20;
+      }
+
+      /* Document Access Section */
+      .document-section {
+        padding: 4rem 2rem;
+        background-color: #ffffff;
+      }
+
+      .document-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: #1a2b10;
+        border-bottom: 3px solid #3e5c29;
+        padding-bottom: 1rem;
+      }
+
+      .document-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .doc-card {
+        background: linear-gradient(135deg, #f4f6f4 0%, #ffffff 100%);
+        padding: 2.5rem;
+        border: 2px solid #d9e2d5;
+        border-radius: 4px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .doc-card:hover {
+        border-color: #3e5c29;
+        box-shadow: 0 8px 16px rgba(62, 92, 41, 0.15);
+        transform: translateY(-5px);
+      }
+
+      .doc-card h3 {
+        color: #1a2b10;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+      }
+
+      .doc-card p {
+        color: #2c3e20;
+        margin-bottom: 1.5rem;
+      }
+
+      .doc-link {
+        display: inline-block;
+        background-color: #3e5c29;
+        color: #ffffff;
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .doc-link:hover {
+        background-color: #5a7d40;
+        transform: translateY(-2px);
+      }
+
+      /* Footer */
+      footer {
+        background-color: #1a2b10;
+        color: #ffffff;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 4rem;
+      }
+
+      footer p {
+        margin-bottom: 0.5rem;
+      }
+
+      footer a {
+        color: #a8bba0;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #ffffff;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        nav ul {
+          gap: 1rem;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .cta-button {
+          padding: 0.8rem 2rem;
+          font-size: 0.95rem;
+        }
+
+        .features h2,
+        .about h2,
+        .document-section h2 {
+          font-size: 1.6rem;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .document-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .about-content {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 2rem 1rem;
+        }
+
+        .hero h1 {
+          font-size: 1.5rem;
+        }
+
+        .hero p {
+          font-size: 0.9rem;
+        }
+
+        .container {
+          padding: 0 1rem;
+        }
+
+        .features,
+        .about,
+        .document-section {
+          padding: 2rem 1rem;
+        }
+
+        .feature-card,
+        .doc-card {
+          padding: 1.5rem;
+        }
+
+        .features h2,
+        .about h2,
+        .document-section h2 {
+          font-size: 1.3rem;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="header-box">
-      <h1>Política de Segurança da Informação e Cibernética</h1>
-      <table>
-        <tr>
-          <th>Organização</th>
-          <td>AgroTech RO</td>
-          <th>Código</th>
-          <td>PSI-AGRO-001</td>
-        </tr>
-        <tr>
-          <th>Versão / Status</th>
-          <td>1.0 - Vigente</td>
-          <th>Classificação</th>
-          <td><span class="classification class-interno">Interno</span></td>
-        </tr>
-        <tr>
-          <th>Data de Emissão</th>
-          <td>24/03/2026</td>
-          <th>Próxima Revisão</th>
-          <td>24/03/2027</td>
-        </tr>
-        <tr>
-          <th>Proprietário (Owner)</th>
-          <td>CISO / Equipe de Segurança da Informação</td>
-          <th>Aprovador</th>
-          <td>Carlos Mendes (Diretor de Operações)</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="content-box">
-      <h2>0. Controle do Documento e Versionamento</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Versão</th>
-            <th>Data</th>
-            <th>Descrição da Alteração</th>
-            <th>Autor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1.0</td>
-            <td>24/03/2026</td>
-            <td>Emissão inicial do documento normativo da AgroTech RO.</td>
-            <td>Equipe de Segurança</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>1. Objetivo</h2>
-      <p>
-        A Política de Segurança da Informação e Cibernética (PSI) é o principal
-        instrumento normativo da AgroTech RO para a proteção de seus ativos de
-        informação. O foco central desta PSI é assegurar a confidencialidade de
-        dados sensíveis dos agricultores parceiros e garantir o não-repúdio e a
-        integridade de contratos digitais estabelecidos na plataforma.
-      </p>
-      <p>São objetivos específicos:</p>
+    <!-- Navigation -->
+    <nav>
       <ul>
-        <li>
-          Proteger os dados cadastrais, financeiros e de produção agrícola
-          pertencentes aos produtores rurais.
-        </li>
-        <li>
-          Garantir a integridade, autenticidade e validade jurídica das
-          transações e contratos digitais entre agricultores e compradores.
-        </li>
-        <li>
-          Garantir a conformidade estrita com a Lei Geral de Proteção de Dados
-          (LGPD - Lei nº 13.709/2018).
-        </li>
-        <li>
-          Assegurar a continuidade da plataforma AgroTech RO, especialmente
-          durante períodos críticos de safra.
-        </li>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#documentos">Documentos</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
+    </nav>
 
-      <h2>2. Escopo de Aplicação</h2>
-      <h3>2.1 Abrangência Pessoal</h3>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <h1>Política de Segurança da Informação</h1>
+        <p>AgroTech RO | Proteção e Integridade de Dados no Agronegócio</p>
+        <a href="psi.html" class="cta-button">Acessar Documento PSI</a>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <h2>Nossos Pilares de Segurança</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>🔐 Confidencialidade</h3>
+            <p>
+              Proteção robusta de dados sensíveis dos agricultores, incluindo
+              informações de safra, localização e dados financeiros.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>✅ Integridade</h3>
+            <p>
+              Garantia de que contratos digitais e transações não sejam
+              adulterados, com assinaturas e hash criptográficos.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>🚀 Disponibilidade</h3>
+            <p>
+              Sistemas operacionais 24/7 com infraestrutura redundante e
+              backups geo-distribuídos para continuidade de negócio.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>📜 Não-Repúdio</h3>
+            <p>
+              Rastreamento completo de ações e autoria de contratos digitais,
+              impedindo negação de participação nas transações.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>🔑 Conformidade</h3>
+            <p>
+              Alinhamento com LGPD, ISO/IEC 27001 e Marco Civil da Internet,
+              garantindo conformidade regulatória total.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>🛡️ Controles Avançados</h3>
+            <p>
+              MFA obrigatório, criptografia AES-256 em repouso, TLS 1.3 em
+              trânsito e pentests anuais especializados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+      <div class="container">
+        <h2>Sobre a PSI da AgroTech RO</h2>
+        <div class="about-content">
+          <p>
+            A <strong>Política de Segurança da Informação e Cibernética (PSI)</strong>
+            da AgroTech RO é o principal instrumento normativo para proteção de ativos
+            de informação da empresa. Ela foi desenvolvida com foco em garantir a
+            segurança dos dados de agricultores parceiros e a validade jurídica de
+            contratos digitais na plataforma.
+          </p>
+          <p>
+            Nossa política aplica-se a todos os colaboradores, prestadores de serviço,
+            compradores, agricultores cadastrados e parceiros de negócio. Ela cobre
+            toda a infraestrutura em nuvem, aplicativos web/mobile, bancos de dados
+            transacionais e sistemas de pagamento gerenciados pela empresa.
+          </p>
+          <p>
+            Com base em padrões internacionais como ISO/IEC 27001:2022 e leis brasileiras
+            como a LGPD (Lei nº 13.709/2018), estabelecemos controles rigorosos,
+            processos de gestão de incidentes, conformidade contínua e responsabilidades
+            claras para todos os envolvidos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Document Section -->
+    <section id="documentos" class="document-section">
+      <div class="container">
+        <h2>Acessar Documentos</h2>
+        <div class="document-cards">
+          <div class="doc-card">
+            <h3>Política Completa</h3>
+            <p>
+              Acesse o documento integral da Política de Segurança da Informação
+              com todos os detalhes sobre controles, conformidade e diretrizes.
+            </p>
+            <a href="psi.html" class="doc-link">Ver Documento PSI</a>
+          </div>
+          <div class="doc-card">
+            <h3>Estrutura de Controles</h3>
+            <p>
+              Consulte os controles operacionais e tecnológicos, incluindo
+              autenticação, criptografia, infraestrutura e backups.
+            </p>
+            <a href="psi.html#7" class="doc-link">Acessar Seção 7</a>
+          </div>
+          <div class="doc-card">
+            <h3>Conformidade e LGPD</h3>
+            <p>
+              Entenda como a AgroTech RO opera em conformidade com a LGPD,
+              ANPD e outras normativas de proteção de dados.
+            </p>
+            <a href="psi.html#8" class="doc-link">Acessar Seção 8</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
       <p>
-        Esta política aplica-se a todos os colaboradores (efetivos e
-        contratados), prestadores de serviço, compradores, agricultores
-        cadastrados e parceiros de negócio que acessem os sistemas da AgroTech
-        RO.
-      </p>
-
-      <h3>2.2 Abrangência Tecnológica</h3>
-      <p>
-        Aplica-se à infraestrutura em nuvem, aplicativos web/mobile, bancos de
-        dados transacionais, repositórios de contratos digitais e meios de
-        pagamento gerenciados pela empresa.
-      </p>
-
-      <h2>3. Referências Normativas e Legais</h2>
-      <ul>
-        <li>
-          <strong>ISO/IEC 27001:2022:</strong> Requisitos para Sistema de Gestão
-          de Segurança da Informação.
-        </li>
-        <li>
-          <strong>LGPD (Lei nº 13.709/2018):</strong> Lei Geral de Proteção de
-          Dados Pessoais do Brasil.
-        </li>
-        <li>
-          <strong>Marco Civil da Internet:</strong> Diretrizes para guarda de
-          logs e responsabilidade civil.
-        </li>
-      </ul>
-
-      <h2>4. Conceitos Fundamentais e Pilares de Segurança</h2>
-      <h3>4.1 Pilares Clássicos e Expandidos</h3>
-      <ul>
-        <li>
-          <strong>Confidencialidade:</strong> Informações de safra, lucros e
-          localização de produtores acessíveis apenas a pessoal autorizado.
-        </li>
-        <li>
-          <strong>Integridade:</strong> Garantia de que contratos de compra e
-          venda e registros de transações não sejam adulterados.
-        </li>
-        <li>
-          <strong>Disponibilidade:</strong> Manutenção dos sistemas operantes
-          24/7.
-        </li>
-        <li>
-          <strong>Autenticidade e Não-Repúdio:</strong> Uso de assinaturas
-          digitais, MFA e trilhas de auditoria para garantir que as partes de um
-          contrato digital não possam negar sua autoria ou consentimento.
-        </li>
-      </ul>
-
-      <h3>4.2 Princípios Inegociáveis</h3>
-      <p>
-        Aplicação do <strong>Princípio do Menor Privilégio</strong> (acesso
-        restrito às necessidades da função) e
-        <strong>Segurança por Design</strong> (segurança embutida desde o código
-        da plataforma).
-      </p>
-
-      <h2>5. Modelo de Governança e Estrutura Organizacional</h2>
-      <p>
-        A estrutura de defesa da AgroTech RO divide-se em Diretoria (aprovação),
-        TI/Segurança (implementação de controles, guarda de contratos) e Todos
-        os Usuários (cumprimento das regras de acesso).
-      </p>
-
-      <h2>6. Gestão de Ativos, Dados e Classificação da Informação</h2>
-      <p>
-        A AgroTech RO categoriza seus ativos informacionais conforme o impacto
-        para o produtor e a empresa:
-      </p>
-      <table>
-        <tr>
-          <th>Nível</th>
-          <th>Definição / Exemplos</th>
-          <th>Controles Mínimos</th>
-        </tr>
-        <tr>
-          <td><span class="classification class-restrito">Restrito</span></td>
-          <td>
-            Dados bancários, assinaturas e chaves criptográficas de contratos
-            digitais, senhas, dados biométricos.
-          </td>
-          <td>
-            Acesso restrito a sistemas nucleares. Criptografia ponta-a-ponta
-            obrigatória.
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="classification class-confidencial">Confidencial</span>
-          </td>
-          <td>
-            Localização de propriedades, histórico de produção e volume de
-            safra, contratos em negociação.
-          </td>
-          <td>Acesso com justificativa. Compartilhamento interno restrito.</td>
-        </tr>
-        <tr>
-          <td><span class="classification class-interno">Interno</span></td>
-          <td>
-            Procedimentos operacionais, manuais de uso da plataforma, relatórios
-            de marketing agregados.
-          </td>
-          <td>Não compartilhável externamente sem autorização.</td>
-        </tr>
-      </table>
-
-      <h2>7. Controles Operacionais e Tecnológicos</h2>
-
-      <h3>7.A Controles de Acesso (IAM)</h3>
-      <ul>
-        <li>
-          Senhas obrigatórias de no mínimo 12 caracteres alfanuméricos e
-          caracteres especiais.
-        </li>
-        <li>
-          <strong>Autenticação Multifator (MFA):</strong> Obrigatória para
-          perfis administrativos e fortemente recomendada para usuários rurais.
-        </li>
-        <li>Bloqueio de conta após 5 tentativas de falha de autenticação.</li>
-      </ul>
-
-      <h3>7.B Controles Criptográficos e Contratos Digitais</h3>
-      <ul>
-        <li>
-          Criptografia de dados em repouso (AES-256) para base de produtores.
-        </li>
-        <li>
-          Criptografia em trânsito (TLS 1.3) para todas as integrações de
-          aplicativo.
-        </li>
-        <li>
-          Geração de Hash (SHA-256 ou superior) para cada contrato digital
-          fechado, garantindo a imutabilidade do acordo comercial entre as
-          partes.
-        </li>
-      </ul>
-
-      <h3>7.C Controles de Infraestrutura e Backups</h3>
-      <ul>
-        <li>
-          Datacenters virtuais protegidos por Next-Generation Firewalls e
-          restrição de IP para acessos SSH/administrativos.
-        </li>
-        <li>
-          Rotinas de backup automatizadas a cada 6 horas, com armazenamento
-          geo-redundante e testes mensais de restauração (Restore Tests).
-        </li>
-      </ul>
-
-      <h2>8. Privacidade e Proteção de Dados (LGPD)</h2>
-      <p>
-        A AgroTech RO mantém o Registro de Operações de Tratamento (RoPA). Os
-        dados coletados dos agricultores possuem finalidades estritas para
-        execução de contrato, atendimento a obrigações regulatórias fiscais e
-        melhoria de serviços via Legítimo Interesse (mediante LIA - Legitimate
-        Interest Assessment).
+        <strong>PSI - AgroTech RO</strong> | Versão 1.0 - Vigente | Data de
+        Emissão: 24/03/2026
       </p>
       <p>
-        Qualquer solicitação de titular (acesso, exclusão de dados) é processada
-        no prazo máximo de 15 dias, conforme Art. 18 da LGPD, preservando-se os
-        dados de contratos digitais por 5 anos (Código Civil) ou 7 anos
-        (exigências fiscais).
+        Proprietário (Owner): CISO / Equipe de Segurança da Informação | Aprovador:
+        Carlos Mendes (Diretor de Operações)
       </p>
-
-      <h2>9. Gestão de Incidentes de Segurança</h2>
       <p>
-        Incidentes envolvendo vazamento de localização de produtores, exposição
-        de valores de contratos ou falha estrutural do banco de dados seguem SLA
-        severo de contenção:
+        Próxima Revisão: 24/03/2027 | Para dúvidas:
+        <a href="mailto:seguranca@agrotech.ro">seguranca@agrotech.ro</a>
       </p>
-      <ul>
-        <li>
-          <strong>Detecção e Contenção:</strong> Isolamento do ambiente
-          comprometido em até 2 horas úteis.
-        </li>
-        <li>
-          <strong>Notificação:</strong> Comunicação à Autoridade Nacional de
-          Proteção de Dados (ANPD) e aos agricultores afetados em até 3 dias
-          úteis para incidentes de alta gravidade (Res. CD/ANPD nº 15/2024).
-        </li>
-      </ul>
-
-      <h2>10. Conformidade e Melhoria Contínua</h2>
-      <p>
-        Sistemas passam por <em>Pentests</em> anuais focados na quebra da lógica
-        de negócios e contratos da plataforma. Colaboradores realizam
-        treinamentos anuais antiphihsing e sobre manuseio de dados de safra.
+      <p style="margin-top: 1.5rem; opacity: 0.8; font-size: 0.9rem;">
+        &copy; 2026 AgroTech RO. Todos os direitos reservados.
       </p>
-
-      <h2>11. Responsabilidades, Não Conformidade e Sanções</h2>
-      <table>
-        <tr>
-          <th>Nível</th>
-          <th>Violação Típica</th>
-          <th>Sanção Aplicável</th>
-        </tr>
-        <tr>
-          <td><strong>Grave</strong></td>
-          <td>
-            Acesso não autorizado a dados de safra; compartilhamento indevido de
-            senhas administrativas.
-          </td>
-          <td>
-            Suspensão de colaborador ou cancelamento de contrato de prestação de
-            serviços.
-          </td>
-        </tr>
-        <tr>
-          <td><strong>Gravíssima</strong></td>
-          <td>
-            Adulteração de contratos digitais; venda de carteira de
-            agricultores; vazamento intencional de banco de dados.
-          </td>
-          <td>
-            Rescisão por justa causa, bloqueio do usuário e acionamento criminal
-            sob a Lei 12.737/2012 e LGPD.
-          </td>
-        </tr>
-      </table>
-
-      <h2>12. Glossário de Termos e Definições</h2>
-      <ul>
-        <li>
-          <strong>Autenticidade:</strong> Propriedade de que uma entidade é quem
-          alega ser.
-        </li>
-        <li>
-          <strong>Não-Repúdio:</strong> Capacidade de provar a ocorrência de um
-          evento ou transação, impedindo as partes de negarem sua participação
-          (vital em contratos digitais).
-        </li>
-        <li>
-          <strong>MFA:</strong>
-          <em>Multi-Factor Authentication</em> (Autenticação de Múltiplos
-          Fatores).
-        </li>
-        <li>
-          <strong>RoPA:</strong>
-          <em>Record of Processing Activities</em> (Registro das Operações de
-          Tratamento).
-        </li>
-      </ul>
-
-      <h2>13. Hierarquia Documental</h2>
-      <p>
-        Esta PSI é o documento de Nível 1. Normas técnicas de controle de
-        acesso, criptografia de contratos e procedimentos operacionais compõem
-        os níveis inferiores e devem estrita obediência a esta diretriz
-        corporativa.
-      </p>
-
-      <h2>14. Revisão e Atualização</h2>
-      <p>
-        A Política de Segurança da Informação da AgroTech RO será revisada
-        ordinariamente todo mês de Março de cada ano civil, ou
-        extraordinariamente em caso de incidentes críticos ou alterações
-        drásticas na arquitetura da plataforma de agronegócio.
-      </p>
-    </div>
+    </footer>
   </body>
 </html>
