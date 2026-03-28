@@ -145,7 +145,9 @@
         background-color: #f4f6f4;
         padding: 2rem;
         border-radius: 4px;
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
       }
 
       .feature-card:hover {
@@ -398,18 +400,18 @@
     </nav>
 
     <script>
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('navMenu');
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
 
-      hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
       });
 
       // Fechar menu ao clicar em um link
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
+      const navLinks = navMenu.querySelectorAll("a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
         });
       });
     </script>
@@ -445,8 +447,8 @@
           <div class="feature-card">
             <h3>🚀 Disponibilidade</h3>
             <p>
-              Sistemas operacionais 24/7 com infraestrutura redundante e
-              backups geo-distribuídos para continuidade de negócio.
+              Sistemas operacionais 24/7 com infraestrutura redundante e backups
+              geo-distribuídos para continuidade de negócio.
             </p>
           </div>
           <div class="feature-card">
@@ -480,23 +482,27 @@
         <h2>Sobre a PSI da AgroTech RO</h2>
         <div class="about-content">
           <p>
-            A <strong>Política de Segurança da Informação e Cibernética (PSI)</strong>
-            da AgroTech RO é o principal instrumento normativo para proteção de ativos
-            de informação da empresa. Ela foi desenvolvida com foco em garantir a
-            segurança dos dados de agricultores parceiros e a validade jurídica de
-            contratos digitais na plataforma.
+            A
+            <strong
+              >Política de Segurança da Informação e Cibernética (PSI)</strong
+            >
+            da AgroTech RO é o principal instrumento normativo para proteção de
+            ativos de informação da empresa. Ela foi desenvolvida com foco em
+            garantir a segurança dos dados de agricultores parceiros e a
+            validade jurídica de contratos digitais na plataforma.
           </p>
           <p>
-            Nossa política aplica-se a todos os colaboradores, prestadores de serviço,
-            compradores, agricultores cadastrados e parceiros de negócio. Ela cobre
-            toda a infraestrutura em nuvem, aplicativos web/mobile, bancos de dados
-            transacionais e sistemas de pagamento gerenciados pela empresa.
+            Nossa política aplica-se a todos os colaboradores, prestadores de
+            serviço, compradores, agricultores cadastrados e parceiros de
+            negócio. Ela cobre toda a infraestrutura em nuvem, aplicativos
+            web/mobile, bancos de dados transacionais e sistemas de pagamento
+            gerenciados pela empresa.
           </p>
           <p>
-            Com base em padrões internacionais como ISO/IEC 27001:2022 e leis brasileiras
-            como a LGPD (Lei nº 13.709/2018), estabelecemos controles rigorosos,
-            processos de gestão de incidentes, conformidade contínua e responsabilidades
-            claras para todos os envolvidos.
+            Com base em padrões internacionais como ISO/IEC 27001:2022 e leis
+            brasileiras como a LGPD (Lei nº 13.709/2018), estabelecemos
+            controles rigorosos, processos de gestão de incidentes, conformidade
+            contínua e responsabilidades claras para todos os envolvidos.
           </p>
         </div>
       </div>
@@ -526,8 +532,8 @@
           <div class="doc-card">
             <h3>Conformidade e LGPD</h3>
             <p>
-              Entenda como a AgroTech RO opera em conformidade com a LGPD,
-              ANPD e outras normativas de proteção de dados.
+              Entenda como a AgroTech RO opera em conformidade com a LGPD, ANPD
+              e outras normativas de proteção de dados.
             </p>
             <a href="psi.html#8" class="doc-link">Acessar Seção 8</a>
           </div>
@@ -539,17 +545,17 @@
     <footer id="contato">
       <p>
         <strong>PSI - AgroTech RO</strong> | Versão 1.0 - Vigente | Data de
-        Emissão: 24/03/2026
+        Emissão: 27/03/2026
       </p>
       <p>
-        Proprietário (Owner): CISO / Equipe de Segurança da Informação | Aprovador:
-        Carlos Mendes (Diretor de Operações)
+        Proprietário LuanBertozzi: CISO / Equipe de Segurança da Informação |
+        Aprovador: Luiz Ricardo (Diretor de Operações)
       </p>
       <p>
-        Próxima Revisão: 24/03/2027 | Para dúvidas:
+        Próxima Revisão: 27/03/2027 | Para dúvidas:
         <a href="mailto:seguranca@agrotech.ro">seguranca@agrotech.ro</a>
       </p>
-      <p style="margin-top: 1.5rem; opacity: 0.8; font-size: 0.9rem;">
+      <p style="margin-top: 1.5rem; opacity: 0.8; font-size: 0.9rem">
         &copy; 2026 AgroTech RO. Todos os direitos reservados.
       </p>
     </footer>
